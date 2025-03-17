@@ -1,1 +1,2 @@
 # Mi portafolio en Desarrollo
+Este es mi portafolio personal en desarrollo, creado con React, donde muestro mis habilidades y proyectos como desarrollador web y backend :) actualmente en proceso de mejora tambien xd, este portafolio presenta secciones como Home, About, Skills, Projects y Contact, con una interfaz algo interactiva xd 

@@ -1,3 +1,4 @@
+/* Global Styles */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
 
 :root {
@@ -62,7 +63,7 @@ a:hover {
   color: var(--accent-color);
 }
 
-/* Menú desplegable móvil */
+/* Mobile Menu */
 .motion-nav {
   background-color: var(--header-bg);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
@@ -116,7 +117,7 @@ a:hover {
   }
 }
 
-/* Estilos de las secciones */
+/* Section Styles */
 .section-about,
 .section-skills,
 .section-projects,

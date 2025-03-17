@@ -1,5 +1,3 @@
-"use client"
-
 import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import { Menu, X, ChevronDown } from "lucide-react"
@@ -56,7 +54,7 @@ export default function Portfolio() {
   }
 
   return (
-    <div className="portfolio-container">
+    <div className="font-sans bg-gray-950 text-gray-200 min-h-screen">
       {/* Header */}
       <header className="header">
         <h1 className="header-title">Portfolio</h1>
@@ -65,7 +63,7 @@ export default function Portfolio() {
             <a
               key={section}
               href={`#${section.toLowerCase()}`}
-              className={`nav-link ${activeSection === section.toLowerCase() ? 'active' : ''}`}
+              className={`nav-link ${activeSection === section.toLowerCase() ? "active" : ""}`}
               onClick={() => handleNavClick(section)}
             >
               {section}
@@ -93,7 +91,7 @@ export default function Portfolio() {
             <a
               key={section}
               href={`#${section.toLowerCase()}`}
-              className={`motion-nav-link ${activeSection === section.toLowerCase() ? 'active' : ''}`}
+              className={`menu-item ${activeSection === section.toLowerCase() ? "active" : ""}`}
               onClick={() => handleNavClick(section)}
             >
               {section}
@@ -108,22 +106,21 @@ export default function Portfolio() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="hero-content"
         >
           <h2 className="hero-title">
             Hola, soy <span className="highlight">{text}</span>
-            <span className="pulse-bar"></span>
+            <span className="pulse-bar">&nbsp;</span>
           </h2>
           <p className="hero-description">Desarrollador Web | Desarrollador Backend</p>
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1, duration: 0.8 }}
-            className="cta"
+            className="hero-action"
           >
             <a
               href="#about"
-              className="cta-link"
+              className="highlight-link"
             >
               Ver más <ChevronDown size={16} className="animate-bounce" />
             </a>
@@ -133,7 +130,7 @@ export default function Portfolio() {
 
       {/* About Section */}
       <section id="about" className="section-about">
-        <div className="section-content">
+        <div>
           <h2 className="section-title">About</h2>
           <p className="section-description">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante
@@ -144,30 +141,27 @@ export default function Portfolio() {
 
       {/* Skills Section */}
       <section id="skills" className="section-skills">
-        <div className="section-content">
-          <h2 className="section-title">Skills</h2>
-          <div className="skills-grid">
-            {skills.map((skill, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="skill-card"
-              >
-                <h3 className="skill-title">{skill}</h3>
-              </motion.div>
-            ))}
-          </div>
+        <div className="skills-grid">
+          {skills.map((skill, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              className="skill-card"
+            >
+              <h3 className="skill-title">{skill}</h3>
+            </motion.div>
+          ))}
         </div>
       </section>
 
       {/* Projects Section */}
       <section id="projects" className="section-projects">
-        <div className="section-content">
+        <div>
           <h2 className="section-title">Projects</h2>
-          <div className="projects-grid">
+          <div className="project-grid">
             {projects.map((project, index) => (
               <motion.div
                 key={index}
@@ -190,20 +184,20 @@ export default function Portfolio() {
 
       {/* Contact Section */}
       <section id="contact" className="section-contact">
-        <div className="section-content">
+        <div>
           <h2 className="section-title">Contact</h2>
           <form className="contact-form">
-            <div className="form-field">
+            <div>
               <label htmlFor="name">Nombre</label>
               <input type="text" id="name" name="name" required />
             </div>
-            <div className="form-field">
+            <div>
               <label htmlFor="email">Correo Electrónico</label>
               <input type="email" id="email" name="email" required />
             </div>
-            <div className="form-field">
+            <div>
               <label htmlFor="message">Mensaje</label>
-              <textarea id="message" name="message" rows="4" required></textarea>
+              <textarea id="message" name="message" required></textarea>
             </div>
             <button type="submit" className="submit-button">Enviar</button>
           </form>
