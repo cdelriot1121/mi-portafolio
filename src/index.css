@@ -1,68 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  --primary-color: #e0e7ff;
+  --secondary-color: #94a3b8;
+  --background-color: #0f172a;
+  --accent-color: #3b82f6;
+  --header-bg: #1e293b;
+  --card-bg: #1e293b;
+}
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--background-color);
+  color: var(--primary-color);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 a {
   font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+  color: var(--accent-color);
+  transition: color 0.3s ease;
 }
+
 a:hover {
-  color: #535bf2;
+  color: #2563eb;
 }
 
-body {
-  margin: 0;
+/* Header */
+.header {
+  background-color: var(--header-bg);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  padding: 16px 32px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  justify-content: space-between;
+  align-items: center;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.header-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primary-color);
 }
 
-button {
+.nav a {
+  text-decoration: none;
+  color: var(--primary-color);
+  padding: 8px 12px;
+}
+
+.nav a:hover {
+  color: var(--accent-color);
+}
+
+/* Menú desplegable móvil */
+.motion-nav {
+  background-color: var(--header-bg);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.hero-description {
+  font-size: 1.2rem;
+  color: var(--secondary-color);
+  margin-top: 10px;
+}
+
+.highlight {
+  color: var(--accent-color);
+}
+
+.pulse-bar {
+  display: inline-block;
+  width: 3px;
+  height: 8px;
+  background-color: var(--accent-color);
+  margin-left: 1rem;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Estilos de las secciones */
+.section-about,
+.section-skills,
+.section-projects,
+.section-contact {
+  padding: 24px 16px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.section-description {
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--secondary-color);
+}
+
+/* Skills Grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.skill-card {
+  background-color: var(--card-bg);
+  padding: 16px;
   border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  text-align: center;
+  color: var(--primary-color);
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.skill-title {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.project-card {
+  background-color: var(--card-bg);
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.project-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.project-description {
+  color: var(--secondary-color);
+}
+
+.project-footer {
+  margin-top: 16px;
+  border-top: 1px solid #333;
+  padding-top: 16px;
+}
+
+.project-link {
+  color: var(--accent-color);
+}
+
+.submit-button {
+  background-color: var(--accent-color);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #2563eb;
+}
+
+.footer {
+  padding: 16px 20px;
+  text-align: center;
+  color: var(--secondary-color);
 }
