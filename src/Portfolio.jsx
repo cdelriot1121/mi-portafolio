@@ -1,6 +1,73 @@
 import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
-import { Menu, X, ChevronDown } from "lucide-react"
+import {
+  Menu,
+  X,
+  ChevronDown,
+  Mail,
+  Github,
+  Linkedin,
+  Globe,
+  Code2,
+  Database,
+  Server,
+  Monitor,
+  Send
+} from "lucide-react"
+import {
+  SiReact,
+  SiHtml5,
+  SiCss3,
+  SiNodedotjs,
+  SiExpress,
+  SiMongodb,
+  SiMysql,
+  SiGit,
+  SiVisualstudiocode,
+  SiDocker,
+  SiSpringboot,
+  SiDjango
+} from "react-icons/si"
+
+// Definimos las tecnologías con sus iconos
+const technologies = [
+  {
+    name: "Frontend",
+    icon: <Monitor size={24} />,
+    skills: [
+      { name: "React", icon: <SiReact /> },
+      { name: "HTML5", icon: <SiHtml5 /> },
+      { name: "CSS3", icon: <SiCss3 /> }
+    ]
+  },
+  {
+    name: "Backend",
+    icon: <Server size={24} />,
+    skills: [
+      { name: "Node.js", icon: <SiNodedotjs /> },
+      { name: "Express", icon: <SiExpress /> },
+      { name: "Spring", icon: <SiSpringboot /> },
+      { name: "Django", icon: <SiDjango /> }
+    ]
+  },
+  {
+    name: "Database",
+    icon: <Database size={24} />,
+    skills: [
+      { name: "MongoDB", icon: <SiMongodb /> },
+      { name: "MySQL", icon: <SiMysql /> }
+    ]
+  },
+  {
+    name: "Tools",
+    icon: <Code2 size={24} />,
+    skills: [
+      { name: "Git", icon: <SiGit /> },
+      { name: "VS Code", icon: <SiVisualstudiocode /> },
+      { name: "Docker", icon: <SiDocker /> }
+    ]
+  }
+]
 
 const sections = ["Home", "About", "Skills", "Projects", "Contact"]
 
@@ -111,7 +178,7 @@ export default function Portfolio() {
             Hola, soy <span className="highlight">{text}</span>
             <span className="pulse-bar">&nbsp;</span>
           </h2>
-          <p className="hero-description">Desarrollador Web | Desarrollador Backend</p>
+          <p className="hero-description">Desarrollador Full Stack</p>
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -131,18 +198,18 @@ export default function Portfolio() {
       {/* About Section */}
       <section id="about" className="section-about">
         <div>
-          <h2 className="section-title">About</h2>
+          <h2 className="section-title">Sobre mí</h2>
           <p className="section-description">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante
-            dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.
+            Desarrollador apasionado por crear soluciones web innovadoras
           </p>
         </div>
       </section>
 
       {/* Skills Section */}
       <section id="skills" className="section-skills">
+        <h2 className="section-title">Tecnologías</h2>
         <div className="skills-grid">
-          {skills.map((skill, index) => (
+          {technologies.map((tech, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
@@ -151,7 +218,16 @@ export default function Portfolio() {
               viewport={{ once: true }}
               className="skill-card"
             >
-              <h3 className="skill-title">{skill}</h3>
+              <div className="skill-icon">{tech.icon}</div>
+              <h3 className="skill-title">{tech.name}</h3>
+              <div className="skill-list">
+                {tech.skills.map((skill, i) => (
+                  <span key={i} className="skill-tag">
+                    {skill.icon}
+                    <span className="skill-name">{skill.name}</span>
+                  </span>
+                ))}
+              </div>
             </motion.div>
           ))}
         </div>
@@ -160,9 +236,12 @@ export default function Portfolio() {
       {/* Projects Section */}
       <section id="projects" className="section-projects">
         <div>
-          <h2 className="section-title">Projects</h2>
+          <h2 className="section-title">Proyectos</h2>
           <div className="project-grid">
-            {projects.map((project, index) => (
+            {[
+              {title: "Proyecto 1", description: "Descripción del proyecto 1"},
+              {title: "Proyecto 2", description: "Descripción del proyecto 2"},
+            ].map((project, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
@@ -182,24 +261,41 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* Contact Section */}
+      {/* Contact Section Mejorado */}
       <section id="contact" className="section-contact">
-        <div>
-          <h2 className="section-title">Contact</h2>
+        <h2 className="section-title">Contacto</h2>
+        <div className="contact-container">
+          <div className="contact-info">
+            <h3>¡Conectemos!</h3>
+            <div className="social-links">
+              <a href="https://github.com/cdelriot1121" target="_blank" rel="noopener noreferrer">
+                <Github size={20} />
+                <span>GitHub</span>
+              </a>
+              <a href="https://linkedin.com/in/tuusuario" target="_blank" rel="noopener noreferrer">
+                <Linkedin size={20} />
+                <span>LinkedIn</span>
+              </a>
+              <a href="mailto:miemail@">
+                <Mail size={20} />
+                <span>Email</span>
+              </a>
+            </div>
+          </div>
           <form className="contact-form">
-            <div>
-              <label htmlFor="name">Nombre</label>
-              <input type="text" id="name" name="name" required />
+            <div className="form-group">
+              <input type="text" id="name" placeholder="Nombre" required />
             </div>
-            <div>
-              <label htmlFor="email">Correo Electrónico</label>
-              <input type="email" id="email" name="email" required />
+            <div className="form-group">
+              <input type="email" id="email" placeholder="Email" required />
             </div>
-            <div>
-              <label htmlFor="message">Mensaje</label>
-              <textarea id="message" name="message" required></textarea>
+            <div className="form-group">
+              <textarea id="message" placeholder="Mensaje" required rows="5"></textarea>
             </div>
-            <button type="submit" className="submit-button">Enviar</button>
+            <button type="submit" className="submit-button">
+              <Send size={16} />
+              <span>Enviar mensaje</span>
+            </button>
           </form>
         </div>
       </section>
