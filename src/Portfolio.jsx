@@ -29,6 +29,37 @@ import {
   SiDjango
 } from "react-icons/si"
 
+const TypeWriter = ({ text, speed = 150 }) => {
+  const [displayText, setDisplayText] = useState("")
+  const [isTyping, setIsTyping] = useState(true)
+
+  useEffect(() => {
+    if (isTyping) {
+      if (displayText.length < text.length) {
+        const timeout = setTimeout(() => {
+          setDisplayText(text.slice(0, displayText.length + 1))
+        }, speed)
+        return () => clearTimeout(timeout)
+      } else {
+        setIsTyping(false)
+      }
+    } else {
+      const timeout = setTimeout(() => {
+        setDisplayText("")
+        setIsTyping(true)
+      }, 3000)
+      return () => clearTimeout(timeout)
+    }
+  }, [displayText, isTyping, text, speed])
+
+  return (
+    <>
+      {displayText}
+      <span className="cursor"></span>
+    </>
+  )
+}
+
 // Definimos las tecnologías con sus iconos
 const technologies = [
   {
@@ -175,8 +206,9 @@ export default function Portfolio() {
           transition={{ duration: 0.8 }}
         >
           <h2 className="hero-title">
-            Hola, soy <span className="highlight">{text}</span>
-            <span className="pulse-bar">&nbsp;</span>
+            Hola, soy <span className="highlight">
+              <TypeWriter text="Carlos Andres" />
+            </span>
           </h2>
           <p className="hero-description">Desarrollador Full Stack</p>
           <motion.div
