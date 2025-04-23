@@ -1,11 +1,29 @@
 /* Estilos para proyectos */
 .projects-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  /* Ajustar tamaño mínimo para mejor distribución */
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 2rem;
-  margin-top: 2rem;
+  margin: 2rem auto;
+  max-width: 1200px;
+  width: 100%;
 }
 
+/* Para pantallas medianas, ajustar a 2 columnas */
+@media (min-width: 768px) and (max-width: 1100px) {
+  .projects-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Para pantallas pequeñas, una columna */
+@media (max-width: 767px) {
+  .projects-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Mantener altura consistente */
 .project-card {
   background: rgba(30, 41, 59, 0.4);
   backdrop-filter: blur(10px);
@@ -16,6 +34,7 @@
   flex-direction: column;
   height: 100%;
   border: 1px solid rgba(255, 255, 255, 0.05);
+  min-height: 450px; /* Altura mínima consistente */
 }
 
 .project-card:hover {
@@ -46,6 +65,7 @@
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  justify-content: space-between; /* Distribuir contenido verticalmente */
 }
 
 .project-title {

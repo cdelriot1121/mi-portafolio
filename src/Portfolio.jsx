@@ -8,7 +8,7 @@ import Footer from "./components/footer";
 
 export default function Portfolio() {
   return (
-    <div className="font-sans bg-gray-950 text-gray-200 min-h-screen">
+    <div className="portfolio-container">
       <Header />
       <Hero />
       <About />
