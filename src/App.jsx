@@ -1,7 +1,9 @@
-import Portfolio from './Portfolio'
+import Portfolio from './Portfolio';
+import './index.css';
+import './components/Projects.css';
 
 function App() {
-  return <Portfolio />
+  return <Portfolio />;
 }
 
-export default App
+export default App;
