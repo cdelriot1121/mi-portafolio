@@ -1,5 +1,5 @@
 import { Send } from "lucide-react";
-import { socialLinks } from "./data/social";
+import { socialLinks } from "./data/social.jsx";
 import { motion } from "framer-motion";
 
 const Contact = () => {

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { technologies } from "./data/skills";
+import { technologies } from "./data/skills.jsx";
 
 const Skills = () => {
   return (

@@ -14,18 +14,13 @@ const About = () => {
           <div className="about-text">
             <p className="section-description">
               Soy un desarrollador Full Stack apasionado por crear soluciones web
-              innovadoras y funcionales. Me especializo en tecnologías como React,
-              Node.js y bases de datos tanto SQL como NoSQL.
+              innovadoras y funcionales.
             </p>
             <p className="about-paragraph">
-              Con experiencia en el desarrollo de aplicaciones web completas,
-              disfruto enfrentando desafíos técnicos y aprendiendo continuamente
-              nuevas tecnologías para mejorar mis habilidades.
+              Con experiencia en el desarrollo de aplicaciones web completas, Lorem ipsum dolor sit amet consectetur...
             </p>
             <p className="about-paragraph">
-              Mi enfoque se centra en crear código limpio, mantenible y
-              soluciones escalables que proporcionen experiencias de usuario
-              excepcionales.
+              Mi enfoque se centra en crear código limpio, mantenible y....
             </p>
           </div>
         </div>

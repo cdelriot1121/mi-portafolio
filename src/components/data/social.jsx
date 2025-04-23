@@ -10,7 +10,7 @@ export const socialLinks = [
   {
     name: "LinkedIn",
     icon: <Linkedin size={20} />,
-    url: "https://linkedin.com/in/carlosandres",
+    url: "https://www.linkedin.com/in/carlos-andres-drt/",
     label: "LinkedIn"
   },
   {

@@ -19,10 +19,7 @@ import {
   SiSpringboot,
   SiDjango,
   SiJavascript,
-  SiTypescript,
-  SiNextdotjs,
-  SiTailwindcss,
-  SiRedux
+  SiTailwindcss
 } from "react-icons/si";
 
 export const technologies = [
@@ -34,10 +31,7 @@ export const technologies = [
       { name: "HTML5", icon: <SiHtml5 /> },
       { name: "CSS3", icon: <SiCss3 /> },
       { name: "JavaScript", icon: <SiJavascript /> },
-      { name: "TypeScript", icon: <SiTypescript /> },
-      { name: "Next.js", icon: <SiNextdotjs /> },
       { name: "Tailwind CSS", icon: <SiTailwindcss /> },
-      { name: "Redux", icon: <SiRedux /> }
     ]
   },
   {
