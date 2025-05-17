@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Download } from "lucide-react";
 import TypeWriter from "./utils/TypeWriter";
 
 const Hero = () => {
@@ -17,11 +17,31 @@ const Hero = () => {
           </span>
         </h2>
         <p className="hero-description">Desarrollador Full Stack</p>
+        
+        <p className="hero-tagline">
+          Creo <span className="highlight">experiencias digitales</span> con código limpio y diseño centrado en el usuario
+        </p>
+        
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1, duration: 0.8 }}
-          className="hero-action"
+          className="hero-actions"
+        >
+          <a href="#projects" className="primary-button">
+            Ver proyectos
+          </a>
+          <a href="/cv.pdf" className="secondary-button" download>
+            <Download size={16} />
+            Descargar CV
+          </a>
+        </motion.div>
+        
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.5, duration: 0.8 }}
+          className="hero-scroll"
         >
           <a href="#about" className="highlight-link">
             Ver más <ChevronDown size={16} className="animate-bounce" />

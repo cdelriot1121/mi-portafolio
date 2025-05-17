@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
-const sections = ["Home", "About", "Skills", "Projects", "Contact"];
+const sections = ["Home", "About", "Experience", "Skills", "Projects", "Contact"];
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
