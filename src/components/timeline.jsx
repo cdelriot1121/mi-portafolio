@@ -5,23 +5,23 @@ const Timeline = () => {
   const experiences = [
     {
       title: "Desarrollador Full Stack",
-      company: "Nombre de la Empresa",
-      period: "2021 - Presente",
+      company: "Freelancer",
+      period: "2022 - Presente",
       description: "Desarrollo de aplicaciones web utilizando React, Node.js, y MongoDB. Implementación de nuevas características y mejora de la experiencia de usuario.",
       type: "work"
     },
     {
-      title: "Desarrollador Frontend",
-      company: "Empresa Anterior",
-      period: "2019 - 2021",
-      description: "Diseño e implementación de interfaces de usuario responsivas. Trabajo con React, CSS y herramientas de diseño.",
-      type: "work"
+      title: "Ingeniero en Sistemas",
+      company: "Fundacion Universitaria...",
+      period: "2023 - Presente",
+      description: "Título universitario en ingeniería con especialización en desarrollo de software.",
+      type: "education"
     },
     {
-      title: "Ingeniero en [Tu carrera]",
-      company: "Universidad XYZ",
-      period: "2015 - 2019",
-      description: "Título universitario en ingeniería con especialización en desarrollo de software.",
+      title: "Desarrollador Backend",
+      company: "Freelancer y Aprendiz Autodidacta",
+      period: "2023 - Presente",
+      description: "Siempre estoy aprendiendo nuevos paquetes para mis Tecnologias en Backend, ya que me gusta esta área de trabajo ",
       type: "education"
     }
   ];

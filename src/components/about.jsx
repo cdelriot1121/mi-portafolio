@@ -22,13 +22,13 @@ const About = () => {
               <div className="about-card">
                 <Code className="about-card-icon" />
                 <h3>Experiencia</h3>
-                <p>Con más de X años desarrollando aplicaciones web completas, me especializo en crear interfaces de usuario intuitivas y sistemas backend robustos.</p>
+                <p>Con más de 2 años desarrollando aplicaciones web completas, me especializo en crear sistemas backend robustos.</p>
               </div>
               
               <div className="about-card">
                 <BookOpen className="about-card-icon" />
                 <h3>Educación</h3>
-                <p>Ingeniero en [tu carrera] con especialización en desarrollo de software. Aprendizaje continuo a través de cursos y certificaciones.</p>
+                <p>Ingeniero con especialización en desarrollo de software. Aprendizaje continuo a través de cursos certificaciones, y claro proyectos</p>
               </div>
               
               <div className="about-card">
@@ -40,18 +40,18 @@ const About = () => {
               <div className="about-card">
                 <Coffee className="about-card-icon" />
                 <h3>En mi tiempo libre</h3>
-                <p>Disfruto [tus hobbies e intereses], lo que me ayuda a mantener una perspectiva fresca y creativa.</p>
+                <p>Disfruto Aprender por medio de articulos y videos informativos, lo que me ayuda a mantener mi sistema actualizado y en constante aprendizaje</p>
               </div>
             </div>
             
             <div className="about-journey">
               <h3>Mi trayectoria</h3>
               <p>
-                Mi camino en el desarrollo comenzó con [cómo empezaste], lo que me llevó a [logro importante]. 
-                A lo largo de mi carrera he trabajado en [tipos de proyectos], ayudando a [resultados que has conseguido].
+                Mi camino en el desarrollo comenzó con mis carrera en Tecnologia en Desarrollo de software, lo que me llevó a querer especializarme en el aspecto logico de los sistemas. 
+                A lo largo de mi carrera he trabajado en diferentes proyectos tanto en lo academico como personales, ayudando a crear software con ideas innovadoras y que cumplan con la solucion de un problema.
               </p>
               <p>
-                Mi enfoque se centra en crear código limpio, mantenible y escalable, priorizando siempre la experiencia del usuario final.
+                Mi enfoque se centra en crear código limpio, mantenible y escalable, priorizando siempre la experiencia del usuario final y como damos a resolver el problema principalmente planteado.
               </p>
             </div>
           </div>
