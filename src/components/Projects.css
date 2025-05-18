@@ -169,3 +169,29 @@
     flex-direction: column;
   }
 }
+
+.project-features {
+  margin: 1.5rem 0;
+}
+
+.project-features h4 {
+  font-size: 1rem;
+  color: var(--primary-color);
+  margin-bottom: 0.75rem;
+}
+
+.project-features ul {
+  list-style: none;
+  padding: 0;
+}
+
+.project-features li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.feature-icon {
+  color: var(--accent-color);
+  margin-right: 0.5rem;
+}

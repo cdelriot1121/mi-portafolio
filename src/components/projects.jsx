@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { projects } from "./data/projects";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink, Github, Check } from "lucide-react";
 
 const Projects = () => {
   return (
@@ -26,6 +26,20 @@ const Projects = () => {
             <div className="project-content">
               <h3 className="project-title">{project.title}</h3>
               <p className="project-description">{project.description}</p>
+              
+              {project.features && (
+                <div className="project-features">
+                  <h4>Características principales:</h4>
+                  <ul>
+                    {project.features.map((feature, i) => (
+                      <li key={i}>
+                        <Check size={16} className="feature-icon" />
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
               
               <div className="project-tags">
                 {project.tags.map((tag, i) => (
