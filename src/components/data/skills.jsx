@@ -1,8 +1,9 @@
 import {
-  Monitor,
   Server,
   Database,
-  Code2
+  Monitor,
+  Code2,
+  Cloud
 } from "lucide-react";
 
 import {
@@ -19,48 +20,68 @@ import {
   SiSpringboot,
   SiDjango,
   SiJavascript,
-  SiTailwindcss
+  SiTailwindcss,
+  SiPostgresql,
+  SiAmazonaws,
+  SiMicrosoftazure,
+  SiKubernetes,
+  SiTerraform,
+  SiGithubactions,
+  SiPython
 } from "react-icons/si";
 
 export const technologies = [
   {
-    name: "Frontend",
-    icon: <Monitor size={24} />,
-    skills: [
-      { name: "React", icon: <SiReact /> },
-      { name: "HTML5", icon: <SiHtml5 /> },
-      { name: "CSS3", icon: <SiCss3 /> },
-      { name: "JavaScript", icon: <SiJavascript /> },
-      { name: "Tailwind CSS", icon: <SiTailwindcss /> },
-    ]
-  },
-  {
     name: "Backend",
-    icon: <Server size={24} />,
+    icon: <Server size={28} />,
     skills: [
       { name: "Node.js", icon: <SiNodedotjs /> },
       { name: "Express", icon: <SiExpress /> },
+      { name: "Django", icon: <SiDjango /> },
       { name: "Spring", icon: <SiSpringboot /> },
-      { name: "Django", icon: <SiDjango /> }
+      { name: "Python", icon: <SiPython /> }
     ]
   },
   {
-    name: "Database",
-    icon: <Database size={24} />,
+    name: "DevOps & Cloud",
+    icon: <Cloud size={28} />,
+    skills: [
+      { name: "Docker", icon: <SiDocker /> },
+      { name: "Kubernetes", icon: <SiKubernetes /> },
+      { name: "AWS", icon: <SiAmazonaws /> },
+      { name: "Azure", icon: <SiMicrosoftazure /> },
+      { name: "Terraform", icon: <SiTerraform /> },
+      { name: "GitHub Actions", icon: <SiGithubactions /> }
+    ]
+  },
+  {
+    name: "Bases de Datos",
+    icon: <Database size={28} />,
     skills: [
       { name: "MongoDB", icon: <SiMongodb /> },
-      { name: "MySQL", icon: <SiMysql /> }
+      { name: "MySQL", icon: <SiMysql /> },
+      { name: "PostgreSQL", icon: <SiPostgresql /> }
     ]
   },
   {
-    name: "Tools",
-    icon: <Code2 size={24} />,
+    name: "Frontend",
+    icon: <Monitor size={28} />,
+    skills: [
+      { name: "React", icon: <SiReact /> },
+      { name: "JavaScript", icon: <SiJavascript /> },
+      { name: "HTML5", icon: <SiHtml5 /> },
+      { name: "CSS3", icon: <SiCss3 /> },
+      { name: "Tailwind CSS", icon: <SiTailwindcss /> }
+    ]
+  },
+  {
+    name: "Herramientas",
+    icon: <Code2 size={28} />,
     skills: [
       { name: "Git", icon: <SiGit /> },
-      { name: "VS Code", icon: <SiVisualstudiocode /> },
-      { name: "Docker", icon: <SiDocker /> }
+      { name: "VS Code", icon: <SiVisualstudiocode /> }
     ]
   }
 ];
 
-export const skills = ["JavaScript", "React", "Node.js", "CSS", "HTML"];
+export const skills = ["Backend Development", "Cloud Architecture", "DevOps", "Database Design", "API Development"];

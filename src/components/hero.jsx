@@ -6,6 +6,19 @@ const Hero = () => {
   // Variable para controlar si el CV está disponible
   const hasCVFile = false; // Cambia a true cuando tengas el archivo
 
+  // Función para manejar el scroll suave - Asegúrate que es simple y no falla
+  const handleScroll = (e, id) => {
+    e.preventDefault();
+    const element = document.getElementById(id);
+    if (element) {
+      // Solución más robusta para el scroll
+      window.scrollTo({
+        top: element.offsetTop - 80,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
     <section id="home" className="hero">
       <motion.div
@@ -19,30 +32,22 @@ const Hero = () => {
             <TypeWriter text="Carlos Andres" />
           </span>
         </h2>
-        <p className="hero-description">Desarrollador Full Stack</p>
+        <p className="hero-description">Backend Developer & Cloud Enthusiast</p>
         
-        {/* Añadimos una animación de fade-in para esta línea */}
         <motion.p 
           className="hero-tagline"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5, duration: 0.8 }}
         >
-          Creo <span className="highlight">experiencias digitales</span> con código limpio y diseño centrado en el usuario
+          Creo <span className="highlight">arquitecturas robustas</span> con código limpio y soluciones escalables en la nube
         </motion.p>
         
-        {/* Redes sociales */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8, duration: 0.8 }}
           className="hero-social"
-          style={{ 
-            display: 'flex', 
-            justifyContent: 'center', 
-            gap: '1rem',
-            margin: '1rem 0' 
-          }}
         >
           <a href="https://github.com/cdelriot1121" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
             <Github size={20} />
@@ -61,17 +66,14 @@ const Hero = () => {
           <a 
             href="#projects" 
             className="primary-button"
-            onClick={(e) => {
-              e.preventDefault();
-              document.getElementById('projects').scrollIntoView({ behavior: 'smooth' });
-            }}
+            onClick={(e) => handleScroll(e, 'projects')}
           >
             Ver proyectos
           </a>
           <a 
-            href="/mi-portafolio/cv.pdf" 
+            href={hasCVFile ? "/mi-portafolio/cv.pdf" : "#"}
             className="secondary-button" 
-            download
+            download={hasCVFile}
             onClick={(e) => {
               if (!hasCVFile) {
                 e.preventDefault();
@@ -91,12 +93,9 @@ const Hero = () => {
           className="hero-scroll"
         >
           <a 
-            href="#about" 
+            href="#about"
             className="highlight-link"
-            onClick={(e) => {
-              e.preventDefault();
-              document.getElementById('about').scrollIntoView({ behavior: 'smooth' });
-            }}
+            onClick={(e) => handleScroll(e, 'about')}
           >
             Ver más <ChevronDown size={16} className="animate-bounce" />
           </a>

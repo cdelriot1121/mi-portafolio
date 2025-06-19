@@ -28,6 +28,28 @@ body {
   justify-content: center;
 }
 
+/* para la correcion de los botones css*/
+.highlight-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--accent-color);
+  text-decoration: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+button.primary-button, button.secondary-button {
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+  cursor: pointer;
+}
+
+
 /* Añadir justo después de los estilos del body */
 
 .portfolio-container {
