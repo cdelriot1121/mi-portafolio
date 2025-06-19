@@ -14,8 +14,9 @@ const About = () => {
         <div className="about-content">
           <div className="about-text">
             <p className="section-description">
-              Soy un desarrollador Full Stack apasionado por crear soluciones web
-              innovadoras y funcionales que combinen un diseño atractivo con código eficiente.
+              Soy un desarrollador Backend especializado en arquitecturas cloud y
+              prácticas DevOps. Me apasiona crear soluciones robustas, escalables
+              y seguras que optimicen el rendimiento y reduzcan costos operativos.
             </p>
             
             <div className="about-cards">

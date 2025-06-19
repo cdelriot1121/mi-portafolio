@@ -51,19 +51,31 @@ const Projects = () => {
               
               <div className="project-links">
                 <a 
-                  href={project.github} 
+                  href={project.github || "#"} 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="project-link github"
+                  onClick={(e) => {
+                    if (!project.github) {
+                      e.preventDefault();
+                      alert('Enlace al código fuente no disponible aún');
+                    }
+                  }}
                 >
                   <Github size={16} />
                   <span>Código</span>
                 </a>
                 <a 
-                  href={project.demo} 
+                  href={project.demo || "#"} 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="project-link demo"
+                  onClick={(e) => {
+                    if (!project.demo) {
+                      e.preventDefault();
+                      alert('Demo no disponible aún');
+                    }
+                  }}
                 >
                   <ExternalLink size={16} />
                   <span>Demo</span>

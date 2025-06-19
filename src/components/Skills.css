@@ -1,0 +1,54 @@
+/* Estilos para la sección de Skills */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem auto;
+  width: 100%;
+  max-width: 1200px;
+  justify-content: center; /* Centra los elementos horizontalmente */
+}
+
+/* Para asegurar que los cards queden centrados cuando hay menos elementos que columnas */
+@media (min-width: 1100px) {
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 350px));
+    justify-content: center;
+  }
+}
+
+.skill-card {
+  background: rgba(30, 41, 59, 0.4);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-width: 400px; /* Límite de ancho para cada tarjeta */
+  margin: 0 auto; /* Centra cada tarjeta individualmente */
+}
+
+/* Asegurar que los iconos y textos están centrados */
+.skill-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.skill-title {
+  text-align: center;
+}
+
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}

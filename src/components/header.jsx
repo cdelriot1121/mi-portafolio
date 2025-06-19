@@ -2,7 +2,8 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
-const sections = ["Home", "About", "Experience", "Skills", "Projects", "Contact"];
+// Añadimos Cloud a las secciones
+const sections = ["Home", "About", "Experience", "Skills", "Cloud", "Projects", "Contact"];
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
