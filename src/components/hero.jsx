@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
-import { ChevronDown, Download, Github, Linkedin } from "lucide-react";
+import { Download, Github, Linkedin } from "lucide-react";
 import TypeWriter from "./utils/TypeWriter";
+import './Hero.css';
 
 const Hero = () => {
   // Variable para controlar si el CV está disponible
@@ -161,37 +162,7 @@ const Hero = () => {
           </motion.button>
         </motion.div>
         
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ 
-            duration: 0.8,
-            delay: 1.4,
-            ease: "easeOut"
-          }}
-          className="hero-scroll"
-        >
-          <motion.button 
-            className="scroll-button"
-            onClick={(e) => handleScroll(e, 'about')}
-            type="button"
-            aria-label="Scroll to about section"
-            whileHover={{ y: -2 }}
-            transition={{ type: "spring", stiffness: 400, damping: 17 }}
-          >
-            Ver más 
-            <motion.div
-              animate={{ y: [0, 5, 0] }}
-              transition={{ 
-                duration: 2, 
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-            >
-              <ChevronDown size={16} />
-            </motion.div>
-          </motion.button>
-        </motion.div>
+
       </motion.div>
     </section>
   );
