@@ -1,0 +1,319 @@
+/* Hero Section - Modern Design */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem 6rem 1rem;
+
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(147, 51, 234, 0.1) 0%, transparent 50%),
+    linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+  overflow: hidden;
+}
+
+/* Background decorative elements - simplified */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  z-index: 1;
+  animation: subtlePulse 4s ease-in-out infinite;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 20%;
+  right: 20%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(147, 51, 234, 0.06) 0%, transparent 70%);
+  border-radius: 50%;
+  z-index: 1;
+  animation: subtlePulse 3s ease-in-out infinite reverse;
+}
+
+/* Hero content container */
+.hero > div {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 800px;
+  width: 100%;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 3rem 2rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+/* Hero title */
+.hero-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.hero-title .highlight {
+  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+  /* Add subtle glow effect */
+  filter: drop-shadow(0 0 20px rgba(59, 130, 246, 0.3));
+  transition: all 0.3s ease;
+}
+
+.hero-title .highlight:hover {
+  filter: drop-shadow(0 0 30px rgba(59, 130, 246, 0.5));
+}
+
+/* Removed the animated underline for cleaner look */
+
+/* Hero description */
+.hero-description {
+  font-size: clamp(1.25rem, 3vw, 1.8rem);
+  color: #cbd5e1;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Hero tagline */
+.hero-tagline {
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  color: #94a3b8;
+  margin-bottom: 3rem;
+  line-height: 1.6;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-tagline .highlight {
+  color: #60a5fa;
+  font-weight: 600;
+}
+
+/* Social links */
+.hero-social {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.hero-social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: rgba(59, 130, 246, 0.1);
+  border: 2px solid rgba(59, 130, 246, 0.3);
+  border-radius: 50%;
+  color: #3b82f6;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(10px);
+}
+
+.hero-social a:hover {
+  background: rgba(59, 130, 246, 0.2);
+  border-color: #3b82f6;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
+}
+
+
+
+/* Hero actions */
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+  flex-wrap: wrap;
+}
+
+
+
+/* Primary button - simplified effects */
+.primary-button {
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+}
+
+.primary-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.5);
+}
+
+.primary-button:active {
+  transform: translateY(0);
+}
+
+/* Secondary button */
+.secondary-button {
+  background: transparent;
+  color: #3b82f6;
+  border: 2px solid #3b82f6;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  backdrop-filter: blur(10px);
+}
+
+.secondary-button:hover {
+  background: rgba(59, 130, 246, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
+}
+
+.secondary-button:active {
+  transform: translateY(0);
+}
+
+
+
+/* Simplified animations - no rotation */
+/* Subtle pulse for background elements */
+@keyframes subtlePulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 0.8; }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .hero {
+    padding: 1rem 1rem 3rem 1rem;
+    min-height: 100vh;
+  }
+  
+  .hero-title {
+    margin-bottom: 1rem;
+  }
+  
+  .hero-description {
+    margin-bottom: 0.8rem;
+  }
+  
+  .hero-tagline {
+    margin-bottom: 2rem;
+  }
+  
+  .hero-social {
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .hero-social a {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .hero-actions {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .primary-button,
+  .secondary-button {
+    width: 100%;
+    max-width: 280px;
+    padding: 0.9rem 1.5rem;
+    font-size: 1rem;
+  }
+  
+  .hero::before,
+  .hero::after {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .hero > div {
+    padding: 2rem 1.5rem;
+    margin: 0 0.5rem;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .hero-actions {
+    gap: 0.8rem;
+  }
+  
+  .primary-button,
+  .secondary-button {
+    max-width: 260px;
+    padding: 0.8rem 1.2rem;
+    font-size: 0.95rem;
+  }
+  
+  .hero-social a {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .hero {
+    background: #000;
+  }
+  
+  .hero-title {
+    color: #fff;
+  }
+  
+  .hero-description {
+    color: #ccc;
+  }
+  
+  .hero-tagline {
+    color: #aaa;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .hero::before,
+  .hero::after {
+    animation: none;
+  }
+  
+  .primary-button,
+  .secondary-button,
+  .hero-social a {
+    transition: none;
+  }
+}

@@ -1,27 +1,47 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
-const TypeWriter = ({ text, speed = 150 }) => {
+const TypeWriter = ({ text, speed = 120, loop = true, delay = 2000 }) => {
   const [displayText, setDisplayText] = useState("");
   const [isTyping, setIsTyping] = useState(true);
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  const resetAnimation = useCallback(() => {
+    setDisplayText("");
+    setIsTyping(true);
+    setIsDeleting(false);
+  }, []);
 
   useEffect(() => {
-    if (isTyping) {
+    let timeout;
+
+    if (isTyping && !isDeleting) {
       if (displayText.length < text.length) {
-        const timeout = setTimeout(() => {
+        timeout = setTimeout(() => {
           setDisplayText(text.slice(0, displayText.length + 1));
         }, speed);
-        return () => clearTimeout(timeout);
       } else {
         setIsTyping(false);
+        if (loop) {
+          timeout = setTimeout(() => {
+            setIsDeleting(true);
+          }, delay);
+        }
       }
-    } else {
-      const timeout = setTimeout(() => {
-        setDisplayText("");
-        setIsTyping(true);
-      }, 3000);
-      return () => clearTimeout(timeout);
+    } else if (isDeleting) {
+      if (displayText.length > 0) {
+        timeout = setTimeout(() => {
+          setDisplayText(text.slice(0, displayText.length - 1));
+        }, speed / 2);
+      } else {
+        setIsDeleting(false);
+        setTimeout(() => {
+          setIsTyping(true);
+        }, 500);
+      }
     }
-  }, [displayText, isTyping, text, speed]);
+
+    return () => clearTimeout(timeout);
+  }, [displayText, isTyping, isDeleting, text, speed, delay, loop]);
 
   return (
     <>
